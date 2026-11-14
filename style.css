@@ -1,0 +1,136 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #d1d0d0;
+}
+
+@font-face {
+    font-family: broad;
+    src: url(Broadway.ttf);
+}
+
+body{
+    overflow-x: hidden;
+    width: 100vw;
+    height: 100vh;
+}
+
+header{
+    width: 100vw;
+    overflow: hidden;
+    height: 15vh;
+    box-shadow: 0px 0px 50px 0px #0000003b;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+header div{
+    width: 20vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+
+header div img{
+    width: 10vh;
+    border-radius: 50%;
+    box-shadow: 5px 5px 10px 0px #0000003b,
+                -5px -5px 10px 0px white;
+    animation: logo_move 3.5s ease-in-out alternate infinite;
+}
+
+@keyframes logo_move{
+    from{
+        transform: translateY(-10%);
+    }
+
+    to{
+        transform: translateY(10%);
+    }
+}
+
+header>div h2{
+    color: #6c5ce7;
+    font-family: 'broad';
+    letter-spacing: 3px;
+    font-size: clamp(16px, 3vw, 200px);
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 40vw;
+    font-family: sans-serif;
+    font-weight: 600;
+}
+
+header input{
+    display: none;
+}
+
+header nav input + label{
+    color: #575757;
+    padding: 0.7vw 1.2vw;
+    font-size: clamp(7px, 1.2vw, 200px);
+    border-radius: 200px;
+    border: none;
+    transition: 0.25s all ease;
+    box-shadow: 5px 5px 10px 0px #0000003b,
+                -5px -5px 10px 0px rgba(255, 255, 255, 0.61);
+}
+
+header nav input:checked + label{
+    box-shadow: inset 3px 3px 5px 0px #0000003b,
+                inset -3px -3px 5px 0px white;
+    color: #6c5ce7;
+}
+
+header nav input + label:hover{
+    transform: scale(0.95);
+    
+}
+
+
+#upload+label{
+    padding: 0.7vw 1.2vw;
+    color: #00b894;
+    font-size: clamp(10px, 1.5vw, 200px);
+    border-radius: 200px;
+    border: none;
+    transition: 0.25s all ease;
+    box-shadow: 5px 5px 10px 0px #0000003b,
+                -5px -5px 10px 0px rgba(255, 255, 255, 0.61);
+}
+
+i{
+    background-color: transparent;
+}
+
+#upload+label:hover{
+    transform: scale(0.95);
+}
+
+#admin+label{
+    color: #ce0505;
+    padding: 0.8vw;
+    font-size: clamp(10px, 1.5vw, 200px);
+    border-radius: 200px;
+    border: none;
+    transition: 0.25s all ease;
+    box-shadow: 5px 5px 10px 0px #0000003b,
+                -5px -5px 10px 0px rgba(255, 255, 255, 0.61);
+}
+
+#admin+label:active, #upload+label:active{
+    box-shadow: inset 3px 3px 5px 0px #0000003b,
+                inset -3px -3px 5px 0px white;
+}
+
+#home:checked #home_sec{
+    display: block;
+}
